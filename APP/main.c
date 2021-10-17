@@ -72,6 +72,7 @@ int main (void){
 				Clear_voidCLCD();
 				CLCD_voidSetPosition(CLCD_ROW_1,CLCD_COL_1);
 				CLCD_voidSend_String( (u8 *)"Wrong Password" );
+
 				/*check if the number of tries exceed the MAXIMUM_NUMBER_FOR_TRY*/
 				if( LOC_u8Iterator+1 ==3){
 					CLCD_voidSetPosition(CLCD_ROW_2,CLCD_COL_1);
