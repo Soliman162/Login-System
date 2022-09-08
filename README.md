@@ -12,14 +12,14 @@ using AVR-Atmega32, LCD, Buzzer, LED and Phone Keypad
 	- If the password is wrong after 3 tries the LCD will dispaly "wrong password" and "No more tries" and the Buzzer will be turned on for 2 seconds then the system will stop.
 
 
-# The hardware that has been used is:  
+## The hardware that has been used is:  
 1. AVR-Atmega32
 2. Keypad
 3. Buzzer
 4. LED Display
 5. LCD Display
 
-# Architecture Layer Applied:
+## Architecture Layer Applied:
 
 - APP Folder has the Main Application --> `main.c`
   
