@@ -24,11 +24,11 @@ using AVR-Atmega32, LCD, Buzzer, LED and Phone Keypad
 - APP Folder has the Main Application --> `main.c`
   
 - HAL Folder has : 
-1.LED Display Driver
-2.Keypad Driver
-3.Buzzer Driver
-4.LED Display Driver
-5.LCD Display Driver
+1. LED Display Driver
+2. Keypad Driver
+3. Buzzer Driver
+4. LED Display Driver
+5. LCD Display Driver
        
 - MCAL Folder has DIO Driver (which is needed because HAL Layer Connecting to MCAL Layer).
 - LIB Folder has .h Files has useful Macros to make the code easier and more readable.
