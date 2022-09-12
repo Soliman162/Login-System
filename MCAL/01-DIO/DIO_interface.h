@@ -1,12 +1,5 @@
-/*
- * DIO_interface.h
- *
- *  Created on: Mar 7, 2021
- *      Author: DELL
- */
-
-#ifndef MCAL_01_DIO_DIO_INTERFACE_H_
-#define MCAL_01_DIO_DIO_INTERFACE_H_
+#ifndef DIO_INTERFACE_H_
+#define DIO_INTERFACE_H_
 
 typedef enum{
 

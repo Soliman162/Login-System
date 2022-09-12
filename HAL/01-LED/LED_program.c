@@ -1,7 +1,7 @@
-#include "..\..\LIB\std_types.h"
-#include "..\..\LIB\BIT_MATH.h"
+#include "std_types.h"
+#include "BIT_MATH.h"
 
-#include "..\..\MCAL\01-DIO\DIO_interface.h"
+#include "DIO_interface.h"
 
 #include "LED_interface.h"
 

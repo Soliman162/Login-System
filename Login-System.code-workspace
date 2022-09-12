@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"keypad_config.h": "c",
+			"buzzer_interface.h": "c",
+			"clcd_interface.h": "c",
+			"keypad_interface.h": "c",
+			"dio_interface.h": "c",
+			"clcd_config.h": "c"
+		}
+	}
+}

@@ -1,12 +1,5 @@
-/*
- * DIO_private.h
- *
- *  Created on: Mar 7, 2021
- *      Author: DELL
- */
-
-#ifndef MCAL_01_DIO_DIO_PRIVATE_H_
-#define MCAL_01_DIO_DIO_PRIVATE_H_
+#ifndef DIO_PRIVATE_H_
+#define DIO_PRIVATE_H_
 
 #define DDRA_REG  *((volatile u8 *)0x3A)
 #define PORTA_REG *((volatile u8 *)0x3B)

@@ -1,12 +1,8 @@
-
-#include "..\..\LIB\std_types.h"
-#include "..\..\LIB\BIT_MATH.h"
-
+#include "std_types.h"
+#include "BIT_MATH.h"
 
 #include "DIO_interface.h"
 #include "DIO_private.h"
-#include "DIO_config.h"
-
 
 ERROR_enumSTATE SetPort_enumDirection (u8 Copy_u8Port , u8 Copy_u8Direction){
 

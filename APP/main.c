@@ -1,18 +1,17 @@
-#include "..\LIB\std_types.h"
-#include "..\LIB\BIT_MATH.h"
-#include "util/delay.h"
+#include "std_types.h"
+#include "BIT_MATH.h"
 
+#include "DIO_interface.h"
+#include "TIMER1_interface.h"
 
-#include "..\MCAL\01-DIO\DIO_interface.h"
-
-#include "..\HAL\01-LED\LED_interface.h"
-#include "..\HAL\04-CLCD\CLCD_interface.h"
-#include "..\HAL\05-BUZZER\BUZZER_interface.h"
-#include "..\HAL\07-Phone_Keypad\PHpad_interface.h"
+#include "LED_interface.h"
+#include "CLCD_interface.h"
+#include "KeyPad_interface.h"
+#include "BUZZER_interface.h"
 
 #define 		PASS_WORD_CHAR_NUM 						4
-#define 		NOT_PRESSED											0
-#define  		MAXIMUM_NUMBER_FOR_TRY				3
+#define 		NOT_PRESSED								0
+#define  		MAXIMUM_NUMBER_FOR_TRY					3
 
 int main (void){
 
@@ -62,7 +61,7 @@ int main (void){
 				CLCD_voidSetPosition(CLCD_ROW_1,CLCD_COL_1);
 				/*say welcome to the user for 1 sec*/
 				CLCD_voidSend_String( (u8 *)"Welcome" );
-				_delay_ms(1000);
+				Timer1_voidDelay_Micro_Seconds(1000000);
 				/*Turn on the enterance led*/
 				LED_voidOn( LOC_strEnterance_LED );
 				break;
@@ -80,7 +79,7 @@ int main (void){
 					CLCD_voidSend_String( (u8 *)"NO more tries" );
 					/*Turn on the alarm*/
 					Buzzer_voidON();
-					_delay_ms(2000);
+					Timer1_voidDelay_Micro_Seconds(2000000);
 					break;
 
 				}else{
@@ -88,9 +87,8 @@ int main (void){
 					CLCD_voidSetPosition(CLCD_ROW_2,CLCD_COL_1);
 					/*display "Try again" for 2 sec*/
 					CLCD_voidSend_String( (u8 *)"Try again" );
-					_delay_ms(2000);
+					Timer1_voidDelay_Micro_Seconds(2000000);
 				}
-
 			}
 			Clear_voidCLCD();
 			LOC_u8Flag = 0;
