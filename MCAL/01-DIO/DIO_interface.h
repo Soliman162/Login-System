@@ -1,5 +1,5 @@
-#ifndef DIO_INTERFACE_H_
-#define DIO_INTERFACE_H_
+#ifndef DIO_INTERFACE_H
+#define DIO_INTERFACE_H
 
 typedef enum{
 

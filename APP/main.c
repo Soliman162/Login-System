@@ -21,16 +21,16 @@ int main (void){
 	u8  LOC_ptru8PassWord [4]="1234" ;
     u8  LOC_ptru8Pass_word_Check[4]  = "" ;
 	u8  LOC_u8Pressed_Button =NOT_PRESSED ;
-	LED_Config		LOC_strEnterance_LED = {PORTD ,PIN5 ,ACTIVE_HIGH};
+	LED_Config	LOC_strEnterance_LED = {PORTD ,PIN5 ,ACTIVE_HIGH};
 
 	/*Init the system*/
 	CLCD_voidInit();
 	Buzzer_voidInit();
-	Phonepad_void_Init();
+	KEY_PAD_voidINIT();
 	LED_voidinit( LOC_strEnterance_LED );
 
 	/*wait until press any button to turn on the CLCD*/
-	while(LOC_u8Pressed_Button == 0){LOC_u8Pressed_Button = Phonepad_u8Get_Number();}
+	while(LOC_u8Pressed_Button == 0){LOC_u8Pressed_Button = KEY_PAD_ptru8GET_PRESSED_VALUE();}
 	LOC_u8Pressed_Button = 0;
 	/*clear the CLCD*/
 	Clear_voidCLCD();
@@ -45,7 +45,7 @@ int main (void){
 
 		for( LOC_u8Number_OF_CHAR = 0 ;LOC_u8Number_OF_CHAR<PASS_WORD_CHAR_NUM ;LOC_u8Number_OF_CHAR++){
 				/*waiting for the user to press a button  */
-				while( LOC_u8Pressed_Button == NOT_PRESSED ){ LOC_u8Pressed_Button = Phonepad_u8Get_Number(); }
+				while( LOC_u8Pressed_Button == NOT_PRESSED ){ LOC_u8Pressed_Button = KEY_PAD_ptru8GET_PRESSED_VALUE(); }
 				LOC_ptru8Pass_word_Check[LOC_u8Number_OF_CHAR] = LOC_u8Pressed_Button;
 				/*display the button's value as a star*/
 				CLCD_voidSend_Data('*');

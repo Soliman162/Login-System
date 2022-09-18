@@ -3,8 +3,8 @@
 
 
 
-void Phonepad_void_Init(void);
-u8 Phonepad_u8Get_Number(void);
+void KEY_PAD_voidINIT(void);
+u8 KEY_PAD_ptru8GET_PRESSED_VALUE(void);
 
 
 

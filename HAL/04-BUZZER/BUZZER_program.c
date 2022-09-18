@@ -8,26 +8,23 @@
 #include "BUZZER_config.h"
 
 
-void Buzzer_voidInit(void){
-
-	
+void Buzzer_voidInit(void)
+{	
 	SetPin_enumDirection(BUZZER_PORT,BUZZER_PIN,DIO_OUTPUT);
 	SetPin_enumValue(BUZZER_PORT,BUZZER_PIN,DIO_LOW);
 }
-void Buzzer_voidON(void){
-
+void Buzzer_voidON(void)
+{
 	SetPin_enumValue(BUZZER_PORT,BUZZER_PIN,DIO_HIGH);
-
 }
-void Buzzer_voidOFF(void){
-
+void Buzzer_voidOFF(void)
+{
 	SetPin_enumValue(BUZZER_PORT,BUZZER_PIN,DIO_LOW);
-
 }
 void Buzzer_voidTOG(void)
 {
 	SetPin_enumValue(BUZZER_PORT,BUZZER_PIN,DIO_HIGH);
-	Timer1_voidDelay_Micro_Seconds_Sync(1000000);
+	Timer1_voidDelay_Micro_Seconds(1000000);
 	SetPin_enumValue(BUZZER_PORT,BUZZER_PIN,DIO_LOW);
-	Timer1_voidDelay_Micro_Seconds_Sync(1000000);
+	Timer1_voidDelay_Micro_Seconds(1000000);
 }

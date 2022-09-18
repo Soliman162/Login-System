@@ -1,5 +1,5 @@
-#ifndef DIO_PRIVATE_H_
-#define DIO_PRIVATE_H_
+#ifndef DIO_PRIVATE_H
+#define DIO_PRIVATE_H
 
 #define DDRA_REG  *((volatile u8 *)0x3A)
 #define PORTA_REG *((volatile u8 *)0x3B)
@@ -19,4 +19,4 @@
 #define PIND_REG  *((volatile u8 *)0x30)
 
 
-#endif /* MCAL_01_DIO_DIO_PRIVATE_H_ */
+#endif 
