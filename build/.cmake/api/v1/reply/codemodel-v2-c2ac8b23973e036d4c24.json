@@ -1,0 +1,87 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "LOG_IN_SYSTEM",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "LOG_IN_SYSTEM.elf::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LOG_IN_SYSTEM.elf-Debug-ff0328b57a9c3b7d2f9b.json",
+					"name" : "LOG_IN_SYSTEM.elf",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "build::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-build-Debug-e85228ed0c3644b49cc4.json",
+					"name" : "build",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "flash::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-flash-Debug-3abc2fa8fdc6b50549b9.json",
+					"name" : "flash",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "remove::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-remove-Debug-18c06ce13ab8c5e46757.json",
+					"name" : "remove",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/soliman/AVR/ATmega32/Login-System/build",
+		"source" : "/home/soliman/AVR/ATmega32/Login-System/APP"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

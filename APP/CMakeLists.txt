@@ -2,14 +2,19 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.22)
 
 PROJECT(LOG_IN_SYSTEM)
 
+set(DEBUG 0)
+
 set(CMAKE_GENERATOR CACHE STRING "Unix Makefiles")
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_CXX_COMPILER avr-g++ CACHE STRING "C++ compiler" FORCE)
 set(CMAKE_C_COMPILER avr-gcc CACHE STRING "C compiler" FORCE)
 set(CMAKE_OBJCOPY      avr-objcopy CACHE STRING "avr-objcopy" FORCE)
 
-set(CMAKE_C_FLAGS "-mmcu=atmega32 -O1 -DF_CPU=8000000UL ")
-
+if (DEBUG EQUAL 1 )
+    set(CMAKE_C_FLAGS "-mmcu=atmega32 -O1 -DF_CPU=8000000UL -g ")
+else()
+    set(CMAKE_C_FLAGS "-mmcu=atmega32 -O1 -DF_CPU=8000000UL ")
+endif()
 
 add_executable( ${PROJECT_NAME}.elf 
 
@@ -48,7 +53,6 @@ add_custom_target(flash
 )
 
 add_custom_target(remove
-                    DEPENDS build 
-                    COMMAND  rm -rf ${CMAKE_CURRENT_SOURCE_DIR}/build
+                    COMMAND  rm -rf ${CMAKE_CURRENT_SOURCE_DIR}/build/*
 )
 
