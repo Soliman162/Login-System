@@ -1,5 +1,5 @@
 # Login-System
-using AVR-Atmega32, LCD, Buzzer, LED and Phone Keypad
+using AVR-Atmega32, LCD, Buzzer, LED and Keypad
 
 1.The system will wait until someone press any button on the keypad to start the system.
 
