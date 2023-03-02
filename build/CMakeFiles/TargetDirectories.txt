@@ -1,6 +1,0 @@
-/home/soliman/AVR/ATmega32/Login-System/build/CMakeFiles/LOG_IN_SYSTEM.elf.dir
-/home/soliman/AVR/ATmega32/Login-System/build/CMakeFiles/build.dir
-/home/soliman/AVR/ATmega32/Login-System/build/CMakeFiles/flash.dir
-/home/soliman/AVR/ATmega32/Login-System/build/CMakeFiles/remove.dir
-/home/soliman/AVR/ATmega32/Login-System/build/CMakeFiles/edit_cache.dir
-/home/soliman/AVR/ATmega32/Login-System/build/CMakeFiles/rebuild_cache.dir
