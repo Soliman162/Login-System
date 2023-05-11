@@ -2,3 +2,5 @@
 build/
 APP/build/
 Login-System.code-workspace
+MCAL/08-I2C/
+HAL/EEPROM/
