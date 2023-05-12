@@ -9,8 +9,6 @@
 
 void KEY_PAD_voidINIT(void)
 {
-	Timer1_voidInit();
-
 	SetPin_enumDirection ( KEY_PAD_INIT_PORT, KEY_PAD_ROW_0 , DIO_INPUT );
 	SetPin_enumDirection ( KEY_PAD_INIT_PORT, KEY_PAD_ROW_1 , DIO_INPUT );
 	SetPin_enumDirection ( KEY_PAD_INIT_PORT, KEY_PAD_ROW_2 , DIO_INPUT );
@@ -25,10 +23,12 @@ void KEY_PAD_voidINIT(void)
 	SetPin_enumDirection ( KEY_PAD_INIT_PORT, KEY_PAD_COL_0 , DIO_OUTPUT);
 	SetPin_enumDirection ( KEY_PAD_INIT_PORT, KEY_PAD_COL_1 , DIO_OUTPUT);
 	SetPin_enumDirection ( KEY_PAD_INIT_PORT, KEY_PAD_COL_2 , DIO_OUTPUT);
+	SetPin_enumDirection ( KEY_PAD_INIT_PORT, KEY_PAD_COL_3 , DIO_OUTPUT);
 
 	SetPin_enumValue(KEY_PAD_INIT_PORT,  KEY_PAD_COL_0 , DIO_HIGH);
 	SetPin_enumValue(KEY_PAD_INIT_PORT,  KEY_PAD_COL_1 , DIO_HIGH);
 	SetPin_enumValue(KEY_PAD_INIT_PORT,  KEY_PAD_COL_2 , DIO_HIGH);
+	SetPin_enumValue(KEY_PAD_INIT_PORT,  KEY_PAD_COL_3 , DIO_HIGH);
 }
 
 u8 KEY_PAD_ptru8GET_PRESSED_VALUE(void){
