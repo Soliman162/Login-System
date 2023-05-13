@@ -15,4 +15,6 @@ typedef float f32;
 typedef double f64;
 typedef long double f96;
 
+#define NULL    ((void *)0)
+
 #endif

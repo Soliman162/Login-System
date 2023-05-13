@@ -15,9 +15,9 @@ u8 Arr_u8ExtraChar []={
 #define CLCD_DATA_PORT         PORTC
 #define CLCD_CONTROL_PORT 	   PORTD
 
-#define CLCD_CONTROL_PIN_RS	    PIN0
-#define CLCD_CONTROL_PIN_RW     PIN1
-#define CLCD_CONTROL_PIN_EN	    PIN2
+#define CLCD_CONTROL_PIN_RS	    PIN5
+#define CLCD_CONTROL_PIN_RW     PIN6
+#define CLCD_CONTROL_PIN_EN	    PIN7
 
 
 
