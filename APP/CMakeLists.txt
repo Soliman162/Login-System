@@ -20,38 +20,23 @@ add_executable( ${PROJECT_NAME}.elf
                             ${CMAKE_CURRENT_SOURCE_DIR}/../HAL/03-KeyPad/KeyPad_program.c
                             ${CMAKE_CURRENT_SOURCE_DIR}/../HAL/04-BUZZER/BUZZER_program.c
                             ${CMAKE_CURRENT_SOURCE_DIR}/../HAL/05-stepper_motor/stepper_program.c
-                            ${CMAKE_CURRENT_SOURCE_DIR}/../HAL/LM35/LM35_program.c
-                            ${CMAKE_CURRENT_SOURCE_DIR}/../HAL/LDR/LDR_program.c
                             
-                            #${CMAKE_CURRENT_SOURCE_DIR}/../HAL/EEPROM/EEPROM_program.c
-
                             ${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/01-DIO/DIO_program.c
                             ${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/02-Timer1/TIMER1_program.c
-                            ${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/02-UART/UART_program.c
-                            ${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/03-ADC/ADC_program.c
                             ${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/07-EXINT/EXINT_program.c
-                            #${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/08-I2C/I2C_program.c
 )  
 
 target_include_directories( ${PROJECT_NAME}.elf PUBLIC
 
                             ${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/01-DIO
                             ${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/02-Timer1
-                            ${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/02-UART/
-                            ${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/03-ADC/
-                            
-                            #${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/08-I2C
-                            
 
                             ${CMAKE_CURRENT_SOURCE_DIR}/../HAL/01-LED
                             ${CMAKE_CURRENT_SOURCE_DIR}/../HAL/02-CLCD
                             ${CMAKE_CURRENT_SOURCE_DIR}/../HAL/03-KeyPad
                             ${CMAKE_CURRENT_SOURCE_DIR}/../HAL/04-BUZZER
                             ${CMAKE_CURRENT_SOURCE_DIR}/../HAL/05-stepper_motor
-                            ${CMAKE_CURRENT_SOURCE_DIR}/../HAL/LM35
-                            ${CMAKE_CURRENT_SOURCE_DIR}/../HAL/LDR
-                            ${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/07-EXINT
-                            #${CMAKE_CURRENT_SOURCE_DIR}/../HAL/EEPROM
+                            ${CMAKE_CURRENT_SOURCE_DIR}/../MCAL/07-EXINT/
 
                             ${CMAKE_CURRENT_SOURCE_DIR}/../LIB                 
 )     

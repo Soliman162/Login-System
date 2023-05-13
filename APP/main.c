@@ -3,15 +3,12 @@
 
 #include "DIO_interface.h"
 #include "TIMER1_interface.h"
-//#include "ADC_interface.h"
 
 #include "LED_interface.h"
 #include "CLCD_interface.h"
 #include "KeyPad_interface.h"
 #include "BUZZER_interface.h"
 #include "stepper_interface.h"
-#include "LM35_interface.h"
-#include "LDR_interface.h"
 #include "EXINT_interface.h"
 
 /***************************************************CPU Core Registers macros****************************************************/
@@ -34,12 +31,10 @@ static inline void CPU_Core_voidEnable_INTERRUPT(void)
 #define 		OPEN_DOOR_OP		'+'
 #define 		CHANGE_PASSWORD_OP	'-'
 
+volatile u8  LOC_u8Flag = 0;
 volatile u8  LOC_u8ISR_flag = 0;
+volatile u8  LOC_u8Pressed_Button =NOT_PRESSED ;
 volatile LED_Config	LOC_strEnterance_LED = {PORTD ,PIN3 ,ACTIVE_HIGH};
-volatile	u8  LOC_u8Flag = 0;
-volatile	u8  LOC_u8Pressed_Button =NOT_PRESSED ;
-
-
 
 void EXint0_ISR(void)
 {
@@ -66,7 +61,6 @@ void EXint0_ISR(void)
 	}
 }
 
-
 int main (void){
 
 	u8  LOC_u8Iterator = 0;
@@ -78,7 +72,6 @@ int main (void){
 	
 	
 	LED_Config	LOC_strWarning_LED = {PORTD ,PIN4 ,ACTIVE_HIGH};
-	//LED_Config	LOC_strAC_LED = {PORTD ,PIN7 ,ACTIVE_HIGH};
 
 	/*Init the system*/
 	Timer1_voidInit();
@@ -91,12 +84,9 @@ int main (void){
 	SetPin_enumValue(PORTD,PIN2,DIO_HIGH);
 	EXINT_voidInit();
 	EXINT_voidSet_Call_Back(EXTINT_0,EXint0_ISR);
-/* 	LM35_voidInit();
-	LDR_voidInit(); */
 
 	LED_voidinit( LOC_strEnterance_LED );
 	LED_voidinit(LOC_strWarning_LED);
-	//LED_voidinit(LOC_strAC_LED);
 	CPU_Core_voidEnable_INTERRUPT();
 	LOC_u8ISR_flag = 1;
 
@@ -250,27 +240,3 @@ int main (void){
 	}
 	return 0 ;
 }
-
-/* 								while(1)
-								{
-									LM35_u32Temperature = LM35_u32Read_Temp();
-									Timer1_voidDelay_Micro_Seconds(1000000);
-									CLCD_voidSetPosition(CLCD_ROW_1,CLCD_COL_1);
-									if(LM35_u32Temperature <= 27)
-									{
-										CLCD_voidSend_String( (u8 *)"AC is OFF " );
-										LED_voidOn(LOC_strAC_LED);
-									}else if(LM35_u32Temperature>27)
-									{
-										CLCD_voidSend_String( (u8 *)"AC is ON " );
-										LED_voidOn(LOC_strAC_LED);
-									}
-									//CLCD_voidSetPosition(CLCD_ROW_2,CLCD_COL_1);
-									CLCD_void_Send_Number(LM35_u32Temperature);
-
-									LDR_u32Value = LDR_u32Read_Light_Indensty();
-									CLCD_voidSetPosition(CLCD_ROW_2,CLCD_COL_1);
-
-									CLCD_void_Send_Number(LDR_u32Value);
-									Timer1_voidDelay_Micro_Seconds(1000000);
-								} */
