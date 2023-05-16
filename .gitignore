@@ -4,3 +4,7 @@ APP/build/
 Login-System.code-workspace
 MCAL/08-I2C/
 HAL/EEPROM/
+HAL/LDR/
+HAL/LM35/
+MCAL/03-ADC/
+MCAL/02-UART/

@@ -34,7 +34,7 @@ static inline void CPU_Core_voidEnable_INTERRUPT(void)
 volatile u8  LOC_u8Flag = 0;
 volatile u8  LOC_u8ISR_flag = 0;
 volatile u8  LOC_u8Pressed_Button =NOT_PRESSED ;
-volatile LED_Config	LOC_strEnterance_LED = {PORTD ,PIN3 ,ACTIVE_HIGH};
+volatile LED_Config	LOC_strEnterance_LED = {PORTD ,PIN6 ,ACTIVE_HIGH};
 
 void EXint0_ISR(void)
 {
@@ -61,17 +61,20 @@ void EXint0_ISR(void)
 	}
 }
 
+static inline void Init_voidEXint0Pin(void)
+{
+	SetPin_enumDirection(PORTD,PIN2,DIO_INPUT);
+	SetPin_enumValue(PORTD,PIN2,DIO_HIGH);
+}
+
 int main (void){
 
 	u8  LOC_u8Iterator = 0;
 	u8  LOC_u8Number_OF_CHAR = 0;
 	u8  LOC_ptru8PassWord [PASS_WORD_CHAR_NUM]="1234" ;
     u8  LOC_ptru8Pass_word_Check[PASS_WORD_CHAR_NUM]  = "" ;
-	u32 LM35_u32Temperature = 10;
-	u32 LDR_u32Value = 10;
-	
-	
-	LED_Config	LOC_strWarning_LED = {PORTD ,PIN4 ,ACTIVE_HIGH};
+
+	LED_Config	LOC_strWarning_LED = {PORTD ,PIN7 ,ACTIVE_HIGH};
 
 	/*Init the system*/
 	Timer1_voidInit();
@@ -80,8 +83,7 @@ int main (void){
 	Stepper_voidInit();
 	KEY_PAD_voidINIT();
 
-	SetPin_enumDirection(PORTD,PIN2,DIO_INPUT);
-	SetPin_enumValue(PORTD,PIN2,DIO_HIGH);
+	Init_voidEXint0Pin();
 	EXINT_voidInit();
 	EXINT_voidSet_Call_Back(EXTINT_0,EXint0_ISR);
 
@@ -190,7 +192,7 @@ int main (void){
 									CLCD_voidSend_String((u8 *)"new pass saved");
 								}else
 								{
-									CLCD_voidSend_String((u8 *)"pass doesn't match");
+									CLCD_voidSend_String((u8 *)"doesn't match");
 									LOC_u8Flag = 0;
 								}
 								Timer1_voidDelay_Micro_Seconds(2000000);
@@ -203,7 +205,7 @@ int main (void){
 
 								CLCD_voidSetPosition(CLCD_ROW_2,CLCD_COL_1);
 								CLCD_voidSend_String( (u8 *)"try again" );
-								Timer1_voidDelay_Micro_Seconds(100000);
+								Timer1_voidDelay_Micro_Seconds(200000);
 							}
 						}
 						break;
@@ -225,6 +227,7 @@ int main (void){
 							LED_voidOn(LOC_strWarning_LED);
 							Timer1_voidDelay_Micro_Seconds(5000000);
 							LED_voidOff(LOC_strWarning_LED);
+							Buzzer_voidOFF();
 							break;
 						}else{
 							/*give the user another chance */

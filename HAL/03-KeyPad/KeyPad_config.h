@@ -2,23 +2,23 @@
 #define KEYPAD_CONFIG_H
 
 
-#define KEY_PAD_INIT_PORT		PORTB
+#define KEY_PAD_INIT_PORT		PORTC
 
-#define  KEY_PAD_ROW_START		PIN4
-#define  KEY_PAD_ROW_END		PIN7
+#define  KEY_PAD_ROW_START		PIN0
+#define  KEY_PAD_ROW_END		PIN3
 
-#define KEY_PAD_ROW_0			PIN4
-#define KEY_PAD_ROW_1			PIN5
-#define KEY_PAD_ROW_2			PIN6
-#define KEY_PAD_ROW_3			PIN7
+#define KEY_PAD_ROW_0			PIN0
+#define KEY_PAD_ROW_1			PIN1
+#define KEY_PAD_ROW_2			PIN2
+#define KEY_PAD_ROW_3			PIN3
 
-#define  KEY_PAD_COL_START		PIN0
-#define  KEY_PAD_COL_END		PIN3
+#define  KEY_PAD_COL_START		PIN4
+#define  KEY_PAD_COL_END		PIN7
 
-#define KEY_PAD_COL_0			PIN0
-#define KEY_PAD_COL_1			PIN1
-#define KEY_PAD_COL_2			PIN2
-#define KEY_PAD_COL_3			PIN3
+#define KEY_PAD_COL_0			PIN4
+#define KEY_PAD_COL_1			PIN5
+#define KEY_PAD_COL_2			PIN6
+#define KEY_PAD_COL_3			PIN7
 
 
 

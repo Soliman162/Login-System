@@ -16,10 +16,10 @@
  * FROM 0 --> 15
  * 4 pins of the motor
  */
-#define COIL_PIN_1      PIN0
-#define COIL_PIN_2      PIN1
-#define COIL_PIN_3      PIN2
-#define COIL_PIN_4      PIN3
+#define COIL_PIN_1      PIN1
+#define COIL_PIN_2      PIN2
+#define COIL_PIN_3      PIN3
+#define COIL_PIN_4      PIN4
 
 /**
  * @brief 
