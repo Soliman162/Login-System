@@ -7,7 +7,7 @@ using AVR-Atmega32, LCD, Buzzer, Stepper Motor,LED and Keypad
 
 - If the password is correct the system will make the user to choose whether it wants to open door or change password.
 - If the user want to open door LCD will display Welcome for 1 second, turn the led on and open door.
-- If the user want to change the password the system will ask the user to enter the new password 2 times .
+- If the user want to change the password the system will ask the user to enter the new password 2 times if the 2 passwords are matched then it will 	 change the password  .
 
 - If the password is wrong the LCD will display "wrong password" and "Try again".
 	
