@@ -1,5 +1,5 @@
 # Login-System
-using AVR-Atmega32, LCD, Buzzer, LED and Keypad
+using AVR-Atmega32, LCD, Buzzer, Stepper Motor,LED and Keypad
 
 1.The system will wait until someone press any button on the keypad to start the system.
 
@@ -18,6 +18,7 @@ using AVR-Atmega32, LCD, Buzzer, LED and Keypad
 3. Buzzer
 4. LED Display
 5. LCD Display
+6. Stepper Motor
 
 ## Architecture Layer Applied:
 
@@ -29,6 +30,7 @@ using AVR-Atmega32, LCD, Buzzer, LED and Keypad
 3. Buzzer Driver
 4. LED Display Driver
 5. LCD Display Driver
+6. Stepper Motor
        
 - MCAL Folder has DIO Driver (which is needed because HAL Layer Connecting to MCAL Layer).
 - LIB Folder has .h Files has useful Macros to make the code easier and more readable.
